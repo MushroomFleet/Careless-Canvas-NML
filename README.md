@@ -33,11 +33,38 @@ Built on the [NML v2.0 specification](https://github.com/MushroomFleet/NML--Nest
 
 ## 🛠 Installation
 
-### Prerequisites
+### 🖥️ Desktop Application (Recommended)
+
+**The easiest way to get started** - Download the portable executable for instant use:
+
+#### Windows Desktop
+- **Download**: `Careless-Canvas-NML-1.0.0-rc.1-portable.exe`
+- **Size**: ~100MB (self-contained)
+- **Requirements**: Windows 10/11 (64-bit)
+
+#### ✨ Benefits
+- ✅ **Zero Installation** - Download and run immediately
+- ✅ **No Prerequisites** - No Node.js, npm, or browser required
+- ✅ **Complete Offline** - Works without internet connection
+- ✅ **Native Experience** - File associations, native menus, desktop integration
+- ✅ **Self-Contained** - All dependencies included
+
+#### Quick Start
+1. **Download** the portable executable from the releases
+2. **Run** `Careless-Canvas-NML-1.0.0-rc.1-portable.exe` from any location
+3. **Start creating** NML documents immediately
+
+---
+
+### 🔧 Development Setup
+
+For developers who want to customize or contribute to the project:
+
+#### Prerequisites
 - **Node.js** (version 16 or higher)
 - **npm** (comes with Node.js)
 
-### Quick Start
+#### Setup Instructions
 1. **Clone or download** the project
 2. **Navigate** to the project directory:
    ```bash
@@ -53,7 +80,7 @@ Built on the [NML v2.0 specification](https://github.com/MushroomFleet/NML--Nest
    ```
 5. **Open your browser** to `http://localhost:3000`
 
-### Production Build
+#### Production Build
 To create a production build:
 ```bash
 npm run build
