@@ -172,7 +172,7 @@ function createMenu() {
             dialog.showMessageBox(mainWindow, {
               type: 'info',
               title: 'About Careless-Canvas-NML',
-              message: 'Careless-Canvas-NML v1.0.0-rc.1',
+              message: 'Careless-Canvas-NML v3.1.1',
               detail: 'Interactive canvas for creating and managing NML documents.\n\nBuilt with React and Electron.\nImplements NML v2.0 specification.',
               buttons: ['OK']
             });

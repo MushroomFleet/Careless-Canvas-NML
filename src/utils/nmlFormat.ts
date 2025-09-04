@@ -4,7 +4,11 @@ import { PageData, ConnectionData, NMLDocument, NMLPage, NMLLink } from '../type
 export const exportToNML = (
   pages: Map<string, PageData>,
   connections: ConnectionData[],
-  title: string = 'Canvas Document'
+  metadata: {
+    title: string;
+    author?: string;
+    tags?: string;
+  }
 ): string => {
   const now = new Date().toISOString();
   
@@ -34,9 +38,10 @@ export const exportToNML = (
   const nmlDoc: NMLDocument = {
     version: '2.0',
     meta: {
-      title,
+      title: metadata.title,
       created: now,
-      author: 'Careless-Canvas-NML User'
+      author: metadata.author || 'Careless-Canvas-NML User',
+      tags: metadata.tags
     },
     canvas: {
       zoom: 1.0,
@@ -77,9 +82,7 @@ const generateXML = (doc: NMLDocument): string => {
   if (doc.canvas.grid !== undefined) {
     xml += `    grid="${doc.canvas.grid}"\n`;
   }
-  if (doc.canvas.theme) {
-    xml += `    theme="${doc.canvas.theme}"\n`;
-  }
+  // REMOVE: theme export - theme is client-only preference
   xml += '  />\n\n';
 
   // Pages section

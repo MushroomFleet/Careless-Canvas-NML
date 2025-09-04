@@ -2,7 +2,7 @@
 
 An interactive canvas application for creating, editing, and managing NML (Nested Markup Language) documents with a visual drag-and-drop interface.
 
-![Version](https://img.shields.io/badge/version-1.0.0--rc.1-blue)
+![Version](https://img.shields.io/badge/version-3.1.1-blue)
 ![React](https://img.shields.io/badge/React-19.1.1-61dafb)
 ![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-3178c6)
 ![License](https://img.shields.io/badge/license-Proprietary-red)
@@ -24,6 +24,14 @@ Built on the [NML v2.0 specification](https://github.com/MushroomFleet/NML--Nest
 - **📱 Responsive Design**: Clean, modern interface that works on desktop and mobile
 - **⚡ Real-time Updates**: Immediate visual feedback for all interactions
 
+### v3.1.1 Quality of Life Features
+- **📋 Project Metadata Management**: Set project name, author, and document tags in Settings
+- **🏷️ Enhanced Page Editing**: Add titles and tags to individual pages for better organization
+- **🔗 Connection Labeling**: Click-to-edit labels on connections for detailed relationship documentation
+- **❌ Connection Deletion Interface**: Visual delete buttons for easy connection management
+- **🎨 Theme Separation**: Client-only theme preferences (not exported to NML files)
+- **📁 Smart Filename Generation**: Automatic naming using project metadata with timestamp
+
 ### Use Cases
 - **Knowledge Management**: Build interconnected knowledge bases
 - **Content Planning**: Organize complex content structures visually
@@ -38,8 +46,8 @@ Built on the [NML v2.0 specification](https://github.com/MushroomFleet/NML--Nest
 **The easiest way to get started** - Download the portable executable for instant use:
 
 #### Windows Desktop
-- **Download**: `Careless-Canvas-NML-1.0.0-rc.1-portable.exe`
-- **Size**: ~100MB (self-contained)
+- **Download**: `Careless-Canvas-NML-3.1.1-portable.exe`
+- **Size**: 35MB (self-contained)
 - **Requirements**: Windows 10/11 (64-bit)
 
 #### ✨ Benefits
@@ -51,7 +59,7 @@ Built on the [NML v2.0 specification](https://github.com/MushroomFleet/NML--Nest
 
 #### Quick Start
 1. **Download** the portable executable from the releases
-2. **Run** `Careless-Canvas-NML-1.0.0-rc.1-portable.exe` from any location
+2. **Run** `Careless-Canvas-NML-3.1.1-portable.exe` from any location
 3. **Start creating** NML documents immediately
 
 ---
@@ -96,9 +104,16 @@ This creates a `build` folder with optimized static files ready for deployment.
 4. **Connect pages** - Drag from one page to another to create relationships
 5. **Save your work** - Click "Save" to download your NML document
 
+### Project & Settings Management
+- **Project Settings**: Access Settings to configure project name, author, and document tags
+- **Smart Filenames**: Project name automatically generates meaningful file names when saving
+- **Theme Preferences**: Choose light or dark theme (client-only, not exported)
+
 ### Page Management
 - **Create Pages**: Press `Ctrl+V` anywhere on the canvas to paste content and create a new page
-- **Edit Pages**: Double-click any page to edit its content
+- **Edit Pages**: Double-click any page to edit its content and metadata
+- **Page Titles**: Add optional titles to pages for better organization
+- **Page Tags**: Set tags on individual pages (comma-separated)
 - **Move Pages**: Drag pages around the canvas to reorganize
 - **Delete Pages**: Select a page and press `Delete`
 - **Change Colors**: Right-click pages to change their color category
@@ -106,8 +121,9 @@ This creates a `build` folder with optimized static files ready for deployment.
 ### Connections & Relationships
 - **Create Connections**: Drag from the edge of one page to another
 - **Relationship Types**: Choose from explores, leads-to, relates, contradicts, supports, questions
-- **Visual Feedback**: Connections show the relationship type and direction
-- **Delete Connections**: Select and delete unwanted connections
+- **Connection Labels**: Add optional labels to connections for detailed documentation
+- **Visual Feedback**: Connections show the relationship type, direction, and labels
+- **Delete Connections**: Click to select connections, then use the delete button that appears
 
 ### File Operations
 - **Save**: Click "Save" button to export as NML file
@@ -147,7 +163,7 @@ src/
 ```
 
 ### Performance
-- **Bundle Size**: 164.57 kB (gzipped) - optimized for fast loading
+- **Bundle Size**: 166.95 kB (gzipped) - optimized for fast loading
 - **Code Splitting**: Automatic code splitting for efficient loading
 - **Production Ready**: Optimized builds with minification and compression
 

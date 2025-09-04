@@ -1,6 +1,6 @@
 {
   "name": "careless-canvas-nml",
-  "version": "1.0.0-rc.1",
+  "version": "3.1.1",
   "description": "Interactive canvas for creating and managing NML documents",
   "author": "Careless-Canvas-NML",
   "main": "public/electron.js",

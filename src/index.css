@@ -286,3 +286,467 @@ button:hover.bg-gray-500 { background-color: #4b5563; }
 .page-node.resizing .resize-handle {
   pointer-events: all;
 }
+
+/* Color picker styles */
+.color-picker-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  z-index: 50;
+}
+
+.color-option {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.25rem;
+  border: 2px solid;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+}
+
+/* Dark theme styles */
+.theme-dark {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.theme-dark .bg-white {
+  background-color: #374151;
+}
+
+.theme-dark .bg-gray-50 {
+  background-color: #1f2937;
+}
+
+.theme-dark .bg-gray-100 {
+  background-color: #374151;
+}
+
+.theme-dark .text-gray-800 {
+  color: #f9fafb;
+}
+
+.theme-dark .text-gray-500 {
+  color: #9ca3af;
+}
+
+.theme-dark .text-gray-600 {
+  color: #d1d5db;
+}
+
+.theme-dark .border-gray-200 {
+  border-color: #4b5563;
+}
+
+/* Dark theme page colors */
+.theme-dark .page-red {
+  background-color: #220c0c;
+  border-color: #dc2626;
+}
+
+.theme-dark .page-blue {
+  background-color: #0c1a2b;
+  border-color: #2563eb;
+}
+
+.theme-dark .page-green {
+  background-color: #0c1f17;
+  border-color: #059669;
+}
+
+.theme-dark .page-yellow {
+  background-color: #2b1f0c;
+  border-color: #d97706;
+}
+
+.theme-dark .page-purple {
+  background-color: #1c0c2b;
+  border-color: #7c3aed;
+}
+
+.theme-dark .page-gray {
+  background-color: #1f2937;
+  border-color: #4b5563;
+}
+
+.theme-dark .page-node {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+.theme-dark .color-picker-dropdown {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+/* Dark theme toolbar and modal styles */
+.theme-dark select {
+  background-color: #374151;
+  color: #f9fafb;
+  border-color: #4b5563;
+}
+
+.theme-dark input[type="radio"],
+.theme-dark input[type="checkbox"] {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+/* Additional dark theme button styles */
+.theme-dark .bg-blue-100 {
+  background-color: #1e3a8a;
+}
+
+.theme-dark .text-blue-700 {
+  color: #93c5fd;
+}
+
+.theme-dark .bg-green-100 {
+  background-color: #14532d;
+}
+
+.theme-dark .text-green-700 {
+  color: #86efac;
+}
+
+.theme-dark .bg-gray-100 {
+  background-color: #374151;
+}
+
+.theme-dark .text-gray-700 {
+  color: #d1d5db;
+}
+
+/* Selected edge styling */
+.selected-edge {
+  stroke-width: 3px !important;
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.6));
+}
+
+/* Delete button styling */
+.bg-red-100 { background-color: #fee2e2; }
+.text-red-700 { color: #b91c1c; }
+.bg-red-100:hover { background-color: #fecaca; }
+
+/* Dark theme delete button */
+.theme-dark .bg-red-100 {
+  background-color: #7f1d1d;
+}
+
+.theme-dark .text-red-700 {
+  color: #fca5a5;
+}
+
+/* Enhanced color picker styles */
+.color-picker-button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.color-picker-button:hover {
+  background-color: #e5e7eb;
+}
+
+.color-option-enhanced {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+  transition: all 0.15s;
+  width: 100%;
+  text-align: left;
+}
+
+.color-option-enhanced:hover {
+  background-color: #f9fafb;
+}
+
+.color-option-enhanced.selected {
+  background-color: #eff6ff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+}
+
+.color-dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 2px solid;
+  flex-shrink: 0;
+}
+
+/* Dark mode color picker */
+.theme-dark .color-picker-button {
+  background-color: #374151;
+  color: #d1d5db;
+  border-color: #4b5563;
+}
+
+.theme-dark .color-picker-button:hover {
+  background-color: #4b5563;
+}
+
+.theme-dark .color-picker-dropdown {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #d1d5db;
+}
+
+.theme-dark .color-option-enhanced {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #d1d5db;
+}
+
+.theme-dark .color-option-enhanced:hover {
+  background-color: #4b5563;
+}
+
+.theme-dark .color-option-enhanced.selected {
+  background-color: #1e3a8a;
+  border-color: #3b82f6;
+  color: #93c5fd;
+}
+
+/* Color change animation */
+.page-node {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.page-node.color-changing {
+  animation: colorPulse 0.6s ease-out;
+  transform: scale(1.02);
+}
+
+@keyframes colorPulse {
+  0% { 
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.2);
+  }
+  100% { 
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+/* Enhanced page color borders with subtle glow */
+.page-red.color-changing { 
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+.page-blue.color-changing { 
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.page-green.color-changing { 
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.page-yellow.color-changing { 
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+.page-purple.color-changing { 
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.page-gray.color-changing { 
+  box-shadow: 0 0 20px rgba(107, 114, 128, 0.3);
+}
+
+/* Subtle pastel outlines on hover for better feedback */
+.page-node:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode modal and dialog improvements */
+.theme-dark .text-gray-400 {
+  color: #9ca3af;
+}
+
+.theme-dark .hover\:text-gray-600:hover {
+  color: #d1d5db;
+}
+
+.theme-dark .border-gray-300 {
+  border-color: #4b5563;
+}
+
+.theme-dark .hover\:bg-gray-100:hover {
+  background-color: #374151;
+}
+
+/* Connection toolbar dark mode */
+.theme-dark .absolute.top-4.left-4 {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+.theme-dark .text-gray-700 {
+  color: #d1d5db;
+}
+
+/* Better button contrast in dark mode */
+.theme-dark .bg-white {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+.theme-dark .border-gray-300 {
+  border-color: #4b5563;
+}
+
+.theme-dark .hover\:bg-gray-50:hover {
+  background-color: #4b5563;
+}
+
+/* Ensure all text is visible */
+.theme-dark .text-xs,
+.theme-dark .text-sm {
+  color: #d1d5db;
+}
+
+/* Improve connection toolbar visibility */
+.theme-dark .connection-toolbar {
+  background-color: #1f2937;
+  border: 1px solid #4b5563;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* React Flow controls dark mode */
+.theme-dark .react-flow__controls {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+.theme-dark .react-flow__controls button {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+.theme-dark .react-flow__controls button:hover {
+  background-color: #4b5563;
+}
+
+/* Enhanced settings modal styling */
+.settings-section {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.settings-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Page metadata editing styles */
+.page-metadata-section {
+  background-color: #f9fafb;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Connection toolbar enhancements */
+.connection-toolbar {
+  min-width: 280px;
+  max-width: 320px;
+}
+
+.connection-toolbar input {
+  transition: border-color 0.2s ease-in-out;
+}
+
+/* Selected connection toolbar */
+.selected-connection-toolbar {
+  min-width: 200px;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Enhanced button hover effects */
+.toolbar-button {
+  transition: all 0.2s ease-in-out;
+  transform: translateY(0);
+}
+
+.toolbar-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced connection selection styles */
+.react-flow__edge.selected-edge .react-flow__edge-path {
+  stroke: #ef4444;
+  stroke-width: 3px;
+  animation: pulse-edge 1.5s infinite;
+}
+
+.react-flow__edge.selected-edge .react-flow__edge-textbg {
+  fill: #fee2e2;
+}
+
+.react-flow__edge.selected-edge .react-flow__edge-text {
+  fill: #dc2626;
+  font-weight: 600;
+}
+
+@keyframes pulse-edge {
+  0% {
+    stroke-opacity: 1;
+  }
+  50% {
+    stroke-opacity: 0.6;
+  }
+  100% {
+    stroke-opacity: 1;
+  }
+}
+
+/* Hover effects for connections */
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke-width: 2px;
+  stroke: #6366f1;
+}
+
+/* Dark theme enhancements for new features */
+.theme-dark .settings-section {
+  border-color: #4b5563;
+}
+
+.theme-dark .page-metadata-section {
+  background-color: #374151;
+}
+
+.theme-dark .selected-connection-toolbar {
+  background-color: rgba(55, 65, 81, 0.95);
+  border-color: #4b5563;
+}

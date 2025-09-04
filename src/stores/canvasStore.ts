@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { PageData, ConnectionData, AppState, PageColor, ConnectionType } from '../types';
+import { PageData, ConnectionData, AppState, PageColor, ConnectionType, ProjectMeta } from '../types';
 import { exportToNML, importFromNML, downloadNMLFile, uploadNMLFile } from '../utils/nmlFormat';
 
 // Utility function to generate unique IDs
@@ -23,6 +23,12 @@ interface CanvasStore extends AppState {
   toggleGrid: () => void;
   setTheme: (theme: 'light' | 'dark') => void;
 
+  // Project metadata actions
+  setProjectName: (name: string) => void;
+  setProjectAuthor: (author: string) => void;
+  setProjectTags: (tags: string[]) => void;
+  updateProjectMeta: (meta: Partial<ProjectMeta>) => void;
+
   // Page actions
   addPage: (x: number, y: number, content?: string) => string;
   updatePage: (id: string, updates: Partial<PageData>) => void;
@@ -31,7 +37,7 @@ interface CanvasStore extends AppState {
   setEditingPage: (id: string | null) => void;
 
   // Connection actions
-  addConnection: (from: string, to: string, type?: ConnectionType) => void;
+  addConnection: (from: string, to: string, type?: ConnectionType, label?: string) => void;
   updateConnection: (id: string, updates: Partial<ConnectionData>) => void;
   deleteConnection: (id: string) => void;
 
@@ -52,6 +58,11 @@ const initialState: AppState = {
     centerY: 0,
     grid: true,
     theme: 'light'
+  },
+  projectMeta: {
+    name: '',
+    author: '',
+    tags: []
   },
   pages: new Map(),
   connections: [],
@@ -78,6 +89,23 @@ export const useCanvasStore = create<CanvasStore>((set, get) => ({
 
   setTheme: (theme) => set((state) => ({
     canvas: { ...state.canvas, theme }
+  })),
+
+  // Project metadata actions
+  setProjectName: (name) => set((state) => ({
+    projectMeta: { ...state.projectMeta, name }
+  })),
+
+  setProjectAuthor: (author) => set((state) => ({
+    projectMeta: { ...state.projectMeta, author }
+  })),
+
+  setProjectTags: (tags) => set((state) => ({
+    projectMeta: { ...state.projectMeta, tags }
+  })),
+
+  updateProjectMeta: (meta) => set((state) => ({
+    projectMeta: { ...state.projectMeta, ...meta }
   })),
 
   // Page actions
@@ -142,9 +170,15 @@ export const useCanvasStore = create<CanvasStore>((set, get) => ({
   setEditingPage: (id) => set({ editingPageId: id }),
 
   // Connection actions
-  addConnection: (from, to, type = 'relates') => {
+  addConnection: (from, to, type = 'relates', label) => {
     const id = generateId();
-    const connection: ConnectionData = { id, from, to, type };
+    const connection: ConnectionData = { 
+      id, 
+      from, 
+      to, 
+      type,
+      label: label || undefined
+    };
 
     set((state) => ({
       connections: [...state.connections, connection]
@@ -162,10 +196,35 @@ export const useCanvasStore = create<CanvasStore>((set, get) => ({
   })),
 
   // File operations
-  saveToNML: (title = 'Canvas Document') => {
+  saveToNML: () => {
     const state = get();
-    const nmlContent = exportToNML(state.pages, state.connections, title);
-    downloadNMLFile(nmlContent, `${title.toLowerCase().replace(/\s+/g, '-')}.nml`);
+    const { projectMeta, pages, connections } = state;
+    
+    // Generate filename from project metadata
+    let filename = 'canvas-document';
+    if (projectMeta.name.trim()) {
+      filename = projectMeta.name.toLowerCase()
+        .replace(/[^a-z0-9]/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+    }
+    
+    // Add timestamp
+    const now = new Date();
+    const timestamp = now.toISOString().slice(0, 19).replace(/[:-]/g, '');
+    filename += `-${timestamp}`;
+    
+    // Generate title for document
+    const title = projectMeta.name || `Canvas Document (${pages.size} pages)`;
+    
+    // Use project metadata in export
+    const nmlContent = exportToNML(state.pages, state.connections, {
+      title,
+      author: projectMeta.author,
+      tags: projectMeta.tags.join(', ')
+    });
+    
+    downloadNMLFile(nmlContent, `${filename}.nml`);
   },
 
   loadFromNML: async () => {

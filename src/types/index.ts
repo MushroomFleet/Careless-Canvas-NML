@@ -32,8 +32,15 @@ export interface CanvasState {
   theme: 'light' | 'dark';
 }
 
+export interface ProjectMeta {
+  name: string;
+  author: string;
+  tags: string[];
+}
+
 export interface AppState {
   canvas: CanvasState;
+  projectMeta: ProjectMeta;
   pages: Map<string, PageData>;
   connections: ConnectionData[];
   selectedPageId: string | null;
