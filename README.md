@@ -1,3 +1,8 @@
+![Version](https://img.shields.io/badge/version-3.1.1-blue)
+![React](https://img.shields.io/badge/React-19.1.1-61dafb)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-3178c6)
+![License](https://img.shields.io/badge/license-Proprietary-red)
+
 # Careless-Canvas-NML
 
 An interactive canvas application for creating, editing, and managing NML (Nested Markup Language) documents with a visual drag-and-drop interface.
@@ -5,11 +10,6 @@ An interactive canvas application for creating, editing, and managing NML (Neste
 **4/9/25:** [Careless-Whisper-V3](https://github.com/MushroomFleet/Careless-Whisper-V3)
 - Careless Canvas was built for Careless Whisper, check it out !
 - you can use this without it, but you will see why :)
-
-![Version](https://img.shields.io/badge/version-3.1.1-blue)
-![React](https://img.shields.io/badge/React-19.1.1-61dafb)
-![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-3178c6)
-![License](https://img.shields.io/badge/license-Proprietary-red)
 
 ## 🎯 What is Careless-Canvas-NML?
 
